@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let node of currentNode | sortBy:'name'">
+        <span (click)="toggleExpand(node)" class="nodeName">{{node.name}}</span>
+        <app-tree-node [currentNode]="node.children" *ngIf="node.isExpanded && !node.value"></app-tree-node>
+    </li>
+</ul>
