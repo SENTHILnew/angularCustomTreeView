@@ -1,4 +1,3 @@
-
 <div class="appContainer">
     <div class="titleBar">
         Tree view
@@ -7,22 +6,37 @@
 
     </div>
     <div class="actionContainer">
-            <button (click)="expanCollapseAll(false)">Collapse All</button>
-            <button (click)="expanCollapseAll(true)">Expand All</button>
+        <button (click)="expanCollapseAll(true)">Expand All</button>
+        <button (click)="expanCollapseAll(false)">Collapse All</button>
     </div>
     <div class="treeContainer">
         <app-tree-node [currentNode]="jsonData.children"></app-tree-node>
     </div>
-    <div class="detailsContainer" *ngIf="utility.selectedStateDetails">
+    <div class="detailsContainer"
+        *ngIf="utility.selectedStateDetails && utility.selectedStateDetails.value && utility.selectedStateDetails.value[0]">
         <table>
-            <tr>
-                <td>
-                    {{utility.selectedStateDetails.name}}
-                </td>
-                <td>
-                    {{utility.selectedStateDetails.value | currency:'INR':'':'1.0-0'}} ({{utility.selectedStateDetails.value | readPopulation}})
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Popluation
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{utility.selectedStateDetails.name}}
+                    </td>
+                    <td>
+                        {{utility.selectedStateDetails.value[0].value | currency:'INR':'':'1.0-0'}}
+                        ({{utility.selectedStateDetails.value[0].value | readPopulation}})
+                    </td>
+                </tr>
+            </tbody>
+
         </table>
     </div>
 </div>

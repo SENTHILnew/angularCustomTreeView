@@ -17,8 +17,8 @@ export class TreeNodeComponent implements OnInit {
   }
 
   toggleExpand(node: treeNode) {
-    if(node.value && node.value[0]){
-        this.utility.assignSelectedState(node.value[0])
+    if(node.value){
+        this.utility.assignSelectedState(node)
     }
     else{
       node.isExpanded = !node.isExpanded;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { mockData } from './common/mocks/datasource';
 import { UtilserviceService } from './common/services/utilservice.service';
-import { treeNode, stateDeails } from './common/interfaces/treeNode.interface';
+import { treeNode } from './common/interfaces/treeNode.interface';
 
 @Component({
   selector: 'app-root',

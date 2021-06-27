@@ -7,8 +7,7 @@ export class UtilserviceService {
 
   constructor() { }
 
-  selectedStateDetails: stateDeails | undefined;
-  selectedState: string = '';
+  selectedStateDetails: treeNode | undefined;
 
   processSourceData(nodeData: any): treeNode {
     let nodeFormated: treeNode = {
@@ -35,8 +34,8 @@ export class UtilserviceService {
     return nodeFormated;
   }
 
-  assignSelectedState(state: stateDeails) {
-    if (this.selectedState !== state.name) {
+  assignSelectedState(state: treeNode) {
+    if (this.selectedStateDetails?.name !== state.name) {
       this.selectedStateDetails = state;
     }
     else {
