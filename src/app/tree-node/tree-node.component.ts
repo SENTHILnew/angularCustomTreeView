@@ -22,6 +22,9 @@ export class TreeNodeComponent implements OnInit {
     }
     else{
       node.isExpanded = !node.isExpanded;
+      if(!node.isExpanded){
+        this.utility.toggleExpand(false,node);
+      }
     }
   }
   
