@@ -54,14 +54,16 @@
     border: 1px solid #0000008f;
     box-shadow: 2px 2px #00000052;
     font-size: 18px;
+    text-align: center;
     .table{
         margin: auto;
         border-collapse: collapse;
+        margin-top: 10px;
       td,th {
             border: 1px solid #787878;
             padding: 8px;
           }
-          td:hover{
+    td:hover{
             background-color:#00000021;;
         }
     }
