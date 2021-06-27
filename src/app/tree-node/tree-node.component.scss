@@ -1,3 +1,24 @@
-.nodeName{
+
+.parentNode{
     cursor: pointer;
+}.nodeName{
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 18px;
+    margin: 2px;
+    font-family: monospace;
+    display: inline-block;
+    color: #000000d9;
+    user-select: none;
+    &:hover{
+        background-color: #0083f4;
+        color: white;
+    }
+}
+.cnt{
+    color: #00000057;
+    font-size: 14px;
+}
+ul,li{
+    list-style: none;
 }

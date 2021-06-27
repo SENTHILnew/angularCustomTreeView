@@ -1,6 +1,10 @@
 <ul>
     <li *ngFor="let node of currentNode | sortBy:'name'">
-        <span (click)="toggleExpand(node)" class="nodeName">{{node.name}}</span>
+        <span (click)="toggleExpand(node)" class="parentNode" > <i class="fa cnt arrowIcon" *ngIf="!node.value"
+                [ngClass]="{'fa-chevron-right':!node.isExpanded,'fa-chevron-down':node.isExpanded}"></i><span
+                class="nodeName">{{node.name}}</span>
+            <span class="cnt countTx" *ngIf="!node.value">({{node.children.length}})
+        </span></span>
         <app-tree-node [currentNode]="node.children" *ngIf="node.isExpanded && !node.value"></app-tree-node>
     </li>
 </ul>

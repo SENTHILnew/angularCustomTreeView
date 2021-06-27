@@ -6,15 +6,16 @@
 
     </div>
     <div class="actionContainer">
-        <button (click)="expanCollapseAll(true)">Expand All</button>
-        <button (click)="expanCollapseAll(false)">Collapse All</button>
+        <button (click)="expanCollapseAll(true)" class="btn">Expand All</button>
+        <button (click)="expanCollapseAll(false)" class="btn">Collapse All</button>
     </div>
     <div class="treeContainer">
         <app-tree-node [currentNode]="jsonData.children"></app-tree-node>
     </div>
     <div class="detailsContainer"
         *ngIf="utility.selectedStateDetails && utility.selectedStateDetails.value && utility.selectedStateDetails.value[0]">
-        <table>
+        State Details:
+        <table class="table">
             <thead>
                 <tr>
                     <th>
