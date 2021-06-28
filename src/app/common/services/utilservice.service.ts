@@ -35,11 +35,6 @@ export class UtilserviceService {
   }
 
   assignSelectedState(state: treeNode) {
-   // if (this.selectedStateDetails?.name !== state.name) {
       this.selectedStateDetails = state;
-   // }
-   /*  else {
-      this.selectedStateDetails = undefined;
-    } */
   }
 }

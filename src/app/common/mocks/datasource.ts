@@ -19,7 +19,9 @@ export const mockData = {
                         {
                           "name": "population",
                           "value": "28000000"
-                        },
+                        }
+                      ]
+                    },
                         {
                           "name": "J&K",
                           "value": [
@@ -29,8 +31,6 @@ export const mockData = {
                             }
                           ]
                         }
-                      ]
-                    }
                   ]
                 }
               ]
@@ -48,6 +48,8 @@ export const mockData = {
                           "name": "population",
                           "value": "67000000"
                         },
+                      ]
+                    },
                         {
                           "name": "kerala",
                           "value": [
@@ -57,8 +59,6 @@ export const mockData = {
                             }
                           ]
                         }
-                      ]
-                    }
                   ]
                 }
               ]
@@ -85,7 +85,9 @@ export const mockData = {
                         {
                           "name": "population",
                           "value": "28000000"
-                        },
+                        }
+                      ]
+                    },
                         {
                           "name": "J&K",
                           "value": [
@@ -95,8 +97,6 @@ export const mockData = {
                             }
                           ]
                         }
-                      ]
-                    }
                   ]
                 }
               ]
@@ -114,6 +114,8 @@ export const mockData = {
                           "name": "population",
                           "value": "67000000"
                         },
+                      ]
+                    },
                         {
                           "name": "kerala",
                           "value": [
@@ -123,8 +125,6 @@ export const mockData = {
                             }
                           ]
                         }
-                      ]
-                    }
                   ]
                 }
               ]

@@ -6,8 +6,8 @@
 
     </div>
     <div class="actionContainer">
-        <button (click)="expanCollapseAll(true)" class="btn">Expand All</button>
-        <button (click)="expanCollapseAll(false)" class="btn">Collapse All</button>
+        <button (click)="expanCollapseAll(true)" class="btn" id="expandBtn">Expand All</button>
+        <button (click)="expanCollapseAll(false)" class="btn" id="collapseBtn">Collapse All</button>
     </div>
     <div class="treeContainer">
         <app-tree-node [currentNode]="jsonData.children"></app-tree-node>
@@ -31,7 +31,7 @@
                     <td>
                         {{utility.selectedStateDetails.name}}
                     </td>
-                    <td>
+                    <td id="popDetail">
                         {{utility.selectedStateDetails.value[0].value | currency:'INR':'':'1.0-0'}}
                         ({{utility.selectedStateDetails.value[0].value | readPopulation}})
                     </td>
