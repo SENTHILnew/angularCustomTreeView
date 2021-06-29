@@ -66,5 +66,9 @@ describe('Appcomponent', () => {
     fixture.detectChanges();
     expect(fixture.debugElement.nativeElement.querySelector('#popDetail').innerText).toContain('6.8 Crores')
     });
+    afterEach(() => {
+      document.body.removeChild(fixture.nativeElement);
+    });
   });
+ 
 });

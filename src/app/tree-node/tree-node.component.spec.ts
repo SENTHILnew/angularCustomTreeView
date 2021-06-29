@@ -150,6 +150,17 @@ describe('TreeNodeComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+  
+  it('default state is all are collapsed', () => {
+    const compiled = fixture.nativeElement;
+    component.currentNode=mockData;
+    fixture.detectChanges();
+    let nodeid=mockData[0].name;
+    let childname=mockData[0].children[0].name;
+    expect(fixture.debugElement.nativeElement.querySelector(`#Node-${nodeid}-0`).innerHTML).not.toContain(childname);
+  });
+
   it('click of parent node, should display child nodes', () => {
     const compiled = fixture.nativeElement;
     component.currentNode=mockData;
@@ -162,25 +173,23 @@ describe('TreeNodeComponent', () => {
     expect(fixture.debugElement.nativeElement.querySelector(`#Node-${nodeid}-0`).innerHTML).toContain(childname);
   });
 
-  it('default state is all are collapsed', () => {
-    const compiled = fixture.nativeElement;
-    component.currentNode=mockData;
-    fixture.detectChanges();
-    let nodeid=mockData[0].name;
-    let childname=mockData[0].children[0].name;
-    expect(fixture.debugElement.nativeElement.querySelector(`#Node-${nodeid}-0`).innerHTML).not.toContain(childname);
-  });
 
   it('display details panel on click of node laste(state) node', fakeAsync(() => {
     const compiled = fixture.nativeElement;
     component.currentNode=mockData;
     fixture.detectChanges();
-    spyOn(component,'toggleExpand');
+    spyOn(component.utility,'assignSelectedState').and.callThrough();
     let nodeid=mockData[0].name;
     let firstElem=fixture.debugElement.nativeElement.querySelector(`#Node-${nodeid}-0`);
+    component.currentNode[0]=component.utility.toggleExpand(true,component.currentNode[0])
+    fixture.detectChanges();
     let nodes= firstElem.querySelectorAll('.parentNode');
     let last= nodes[nodes.length-1];
     last.click();
-    expect(component.toggleExpand).toHaveBeenCalled();
+    expect(component.utility.assignSelectedState).toHaveBeenCalled();
   }));
+
+  afterEach(() => {
+    document.body.removeChild(fixture.nativeElement);
+  });
 });

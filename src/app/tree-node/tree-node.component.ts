@@ -11,7 +11,7 @@ export class TreeNodeComponent implements OnInit {
   isExpanded: boolean = false;
 
   @Input() currentNode: treeNode[] = [];
-  constructor(private utility:UtilserviceService) { }
+  constructor(public utility:UtilserviceService) { }
 
   ngOnInit(): void {
   }
